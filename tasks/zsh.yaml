@@ -1,0 +1,5 @@
+- name: Install the node js 
+  ansible.builtin.dnf:
+    name: install nodejs
+
+

@@ -1,0 +1,22 @@
+- name: Install zsh
+  dnf: name=zsh
+  tags:
+  - zsh
+- name: Change shell
+  shell: chsh -s `which zsh`
+  tags:
+  - zsh
+- name: Install ohmyzsh (Please don't tell anyone I use this)
+  shell: curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.shm_size | sh
+  tags:
+  - zsh
+- name: Install zsh plugin autosuggestions
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
+  tags:
+  - zsh
+- name: update zshrc
+  shell: sed -i 's/(git/(git zsh-autosuggestions/' ~/.zshrc
+  tags:
+  - zsh
