@@ -7,7 +7,7 @@
   tags:
   - zsh
 - name: Install ohmyzsh (Please don't tell anyone I use this)
-  shell: curl -L https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.shm_size | sh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   tags:
   - zsh
 - name: Install zsh plugin autosuggestions

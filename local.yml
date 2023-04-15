@@ -8,7 +8,9 @@
       - node
       - zsh
   tasks:
+  # - include: tasks/core-setups.yml
   - include: tasks/zsh.yml
   - include: tasks/node.yml
   - include: tasks/npm-pkgs.yml
   - include: tasks/git-setup.yml
+  - include: tasks/neovim-setup.yml
