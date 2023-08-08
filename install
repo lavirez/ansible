@@ -1,4 +1,17 @@
 #!/usr/bin/env bash
-sudo apt install software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible
+# Check if the OS is Ubuntu
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [[ "$ID" == "ubuntu" ]]; then
+        sudo apt update
+        sudo apt install -y software-properties-common
+        sudo apt-add-repository --yes --update ppa:ansible/ansible
+        sudo apt install -y ansible
+    fi
+fi
+
+# Check if the OS is Fedora
+if [ -f /etc/fedora-release ]; then
+    sudo dnf install -y ansible
+fi
+
