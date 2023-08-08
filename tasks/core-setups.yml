@@ -4,22 +4,22 @@
     name: ["pkg-config", "cmake",]
   tags:
     - install
-      # - neovim
+    - neovim
     - core
 
-- name: Install System Packages 2 (lua, unzip, libtool, libtool-bin, gettext)
+- name: Install System Packages 2 (lua, unzip, libtool, gettext)
   become: true
   dnf:
-    name: [ "lua5.1", "unzip", "libtool", "libtool-bin", "gettext"]
+    name: [ "lua5.1", "unzip", "libtool", "gettext"]
   tags:
     - install
-      # - neovim
+    - neovim
     - core
 
 - name: Install System Packages 3 (the rest)
   become: true
   dnf:
-    name: [ "compton", "curl", "htop", "golang", "lsof", "ccache", "ninja-build", "python3-pip", "dconf-editor", "moreutils", "clangd"]
+    name: [ "curl", "htop", "golang", "lsof", "ccache", "ninja-build", "python3-pip", "dconf-editor", "moreutils" ]
   tags:
     - install
     - core

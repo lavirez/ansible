@@ -9,6 +9,7 @@
       - zsh
   tasks:
   # - include: tasks/core-setups.yml
+  - include: tasks/core-setups.yml
   - include: tasks/zsh.yml
   - include: tasks/node.yml
   - include: tasks/npm-pkgs.yml
